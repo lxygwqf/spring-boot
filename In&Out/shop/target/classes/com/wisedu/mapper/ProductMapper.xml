@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wisedu.dao.ProductDao">
+    <select id="getProduct" parameterType="Long" resultType="product">
+        select id,product_name as productName, stock, price, version, note from T_Product where id= #{id}
+    </select>
+
+    <!--以下的一个select的内容是悲观锁的机制-->
+    <!--<select id="getProduct" parameterType="Long" resultType="product">-->
+        <!--select id,product_name as productName, stock, price, version, note from T_Product where id= #{id} for update-->
+    <!--</select>-->
+
+    <update id="decreseProduct">
+        update T_Product set stock = stock - #{quantity} where id = #{id}
+    </update>
+
+    <!--下面的select是乐观锁的机制。需要更改decreseProduct-->
+    <!--<update id="decreseProduct">-->
+        <!--update T_Product set stock = stock - #{quantity},-->
+        <!--version = version + 1-->
+        <!--where id = #{id} and version = #{version}-->
+    <!--</update>-->
+
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--这个映射文件用于User这个POJO与数据库的数据相对应-->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace指定一个mybatis的接口-->
+<mapper namespace="com.springboot.chapter9.dao.UserDao">
+<!--select是一个查询语句 resultType指代返回值类型-->
+	<select id="getUser" resultType="user">
+		<!--这里的列名与POJO User的名字保持一致-->
+		select  user_name as userName from t_user where id = #{id}
+	</select>
+	
+	<select id="findUsers" resultType="user">
+	   select id, user_name as userName, note from t_user
+	   <where>
+	        <if test="userName != null"> and user_name like concat('%', #{userName}, '%')</if>
+	        <if test="note != null"> and note like concat('%', #{note}, '%')</if>
+	   </where>
+	</select>
+
+	<insert id="insertUser" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+		insert into t_user(user_name, note) values(#{userName}, #{note})
+	</insert>
+	
+</mapper>

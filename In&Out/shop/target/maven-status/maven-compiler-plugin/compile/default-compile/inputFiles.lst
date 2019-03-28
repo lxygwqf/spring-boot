@@ -1,0 +1,10 @@
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/dao/ProductDao.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/dao/PurchaseRecordDao.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/pojo/PurchaseRecordPojo.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/service/Impl/PurchaseServiceImpl.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/pojo/ProductPojo.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/controller/PurchaseController.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/task/Impl/TaskServiceImpl.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/main/ShopApplication.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/service/PurchaseService.java
+/home/xuli/文档/Spring Boot/v2/shop/src/main/java/com/wisedu/task/TaskService.java
